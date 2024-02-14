@@ -23,10 +23,10 @@ public class EmployeeRepository {
     private List<Employee> persons;
     private Gson gson;
 
-    public EmployeeRepository() {
-        gson = new Gson();
-        persons = loadPersonsFromFile();
-    }
+    // public EmployeeRepository() {
+    //     gson = new Gson();
+    //     persons = loadPersonsFromFile();
+    // }
 
     private List<Employee> loadPersonsFromFile() {
         try (Reader reader = new FileReader(FILE_PATH)) {
