@@ -1,15 +1,17 @@
-package com.practical.employee.model;
+package com.practical.employee.Domain;
 
 import com.practical.employee.constants.Department;
 
-public class EmployeeDto{
+public class Employee {
+    private long id;
     private String firstName;
 
-    private String lastName;
-    private Department department;
-    private long dateOfBirth;
-    private long joinDate;
-    private double salary;
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -46,5 +48,10 @@ public class EmployeeDto{
     public void setSalary(double salary) {
         this.salary = salary;
     }
-    
+    private String lastName;
+    private Department department;
+    private long dateOfBirth;
+    private long joinDate;
+    private double salary;
+
 }
