@@ -1,8 +1,11 @@
 package com.practical.employee.Domain;
 
+import java.util.Date;
+
 import com.practical.employee.constants.Department;
 
 public class Employee {
+
     private long id;
     private String firstName;
 
@@ -30,16 +33,16 @@ public class Employee {
     public void setDepartment(Department department) {
         this.department = department;
     }
-    public long getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
-    public void setDateOfBirth(long dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-    public long getJoinDate() {
+    public Date getJoinDate() {
         return joinDate;
     }
-    public void setJoinDate(long joinDate) {
+    public void setJoinDate(Date joinDate) {
         this.joinDate = joinDate;
     }
     public double getSalary() {
@@ -50,8 +53,11 @@ public class Employee {
     }
     private String lastName;
     private Department department;
-    private long dateOfBirth;
-    private long joinDate;
+    private Date dateOfBirth;
+    private Date joinDate;
     private double salary;
+
+    public void set(double random) {
+    }
 
 }

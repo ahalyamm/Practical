@@ -39,6 +39,12 @@ public class EmployeeRepository {
 
 
     public void addPerson(Employee person) {
+        gson = new Gson();
+        persons = loadPersonsFromFile();
+        if(!persons.isEmpty())
+            person.setId(persons.size()+1);
+        else
+          person.setId(1);
         persons.add(person);
         savePersonsToFile();
     }
@@ -52,14 +58,46 @@ public class EmployeeRepository {
 
     }
 
-    public Employee getPerson(int id) {
+    public Employee getPerson(long id) throws Exception{
+        gson = new Gson();
+        persons = loadPersonsFromFile();
         for (Employee person : persons) {
             if (person.getId() == id) {
                 return person;
             }
         }
-        return null;
+        throw new Exception("Invalid User Id");
     }
+
+    public List<Employee> getPersonByParam(String name, Double fromSalary, Double toSalary){
+        gson = new Gson();
+        persons = loadPersonsFromFile();
+        List<Employee> emp = new ArrayList<>();
+        for (Employee person : persons) {
+            if (name != null && person.getFirstName().equals(name)) {
+                emp.add(person);
+                continue;
+            }
+
+            if(fromSalary != null && toSalary != null && fromSalary<= person.getSalary() && toSalary>= person.getSalary()){
+                emp.add(person);
+                continue;
+            }
+
+            if(fromSalary != null  && fromSalary<= person.getSalary()){
+                emp.add(person);
+                continue;
+            }
+
+            if(toSalary != null  && toSalary>= person.getSalary()){
+                emp.add(person);
+                continue;
+            }
+        }
+        return emp;
+    }
+
+
 
 
 }
