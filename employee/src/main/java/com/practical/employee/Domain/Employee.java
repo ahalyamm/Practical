@@ -45,17 +45,17 @@ public class Employee {
     public void setJoinDate(Date joinDate) {
         this.joinDate = joinDate;
     }
-    public double getSalary() {
+    public Double getSalary() {
         return salary;
     }
-    public void setSalary(double salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
     private String lastName;
     private Department department;
     private Date dateOfBirth;
     private Date joinDate;
-    private double salary;
+    private Double salary;
 
     public void set(double random) {
     }

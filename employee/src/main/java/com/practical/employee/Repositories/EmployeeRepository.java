@@ -73,23 +73,51 @@ public class EmployeeRepository {
         gson = new Gson();
         persons = loadPersonsFromFile();
         List<Employee> emp = new ArrayList<>();
+        System.out.println(fromSalary);
+
+
         for (Employee person : persons) {
-            if (name != null && person.getFirstName().equals(name)) {
+
+
+            if(name != null && fromSalary != null && toSalary != null && person.getFirstName().equals(name) && fromSalary<= person.getSalary() && toSalary>= person.getSalary()){
+                 emp.add(person);
+                 System.out.println("condition1");
+                continue;
+            }
+
+            if(name != null && fromSalary != null && person.getFirstName().equals(name) && fromSalary<= person.getSalary()){
+                System.out.println("condition2");
                 emp.add(person);
                 continue;
             }
 
+            if(name != null && toSalary != null && person.getFirstName().equals(name) && toSalary>= person.getSalary()){
+                System.out.println("condition3");
+                emp.add(person);
+                continue;
+            }
+
+
             if(fromSalary != null && toSalary != null && fromSalary<= person.getSalary() && toSalary>= person.getSalary()){
+                System.out.println("condition4");
+            emp.add(person);
+            continue;
+                }
+            
+            if (name != null && person.getFirstName().equals(name)) {
+                System.out.println("condition5");
                 emp.add(person);
                 continue;
             }
 
             if(fromSalary != null  && fromSalary<= person.getSalary()){
+                System.out.println("condition6");
                 emp.add(person);
                 continue;
             }
 
             if(toSalary != null  && toSalary>= person.getSalary()){
+                System.out.println("condition7");
                 emp.add(person);
                 continue;
             }

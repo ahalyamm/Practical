@@ -45,7 +45,7 @@ public class EmployeeService {
         return employeeRepository.getPerson(id);
     }
 
-    public List<Employee> getEmployeeByParam(String name, double from, double to){
+    public List<Employee> getEmployeeByParam(String name, Double from, Double to){
        return employeeRepository.getPersonByParam(name, from, to);
     }
 

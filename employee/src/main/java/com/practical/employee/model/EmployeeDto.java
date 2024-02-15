@@ -9,7 +9,7 @@ public class EmployeeDto{
     private Department department;
     private long dateOfBirth;
     private long joinDate;
-    private double salary;
+    private Double salary;
     public String getFirstName() {
         return firstName;
     }
@@ -40,10 +40,10 @@ public class EmployeeDto{
     public void setJoinDate(long joinDate) {
         this.joinDate = joinDate;
     }
-    public double getSalary() {
+    public Double getSalary() {
         return salary;
     }
-    public void setSalary(double salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
     

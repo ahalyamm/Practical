@@ -35,7 +35,7 @@ public class EmployeeController{
     }
 
     @GetMapping
-    public List<Employee> getEmployeeByParams(@RequestParam(required = false) String name, @RequestParam(required = false) double fromSalary, @RequestParam(required = false)double toSalary){
+    public List<Employee> getEmployeeByParams(@RequestParam(required = false) String name, @RequestParam(required = false) Double fromSalary, @RequestParam(required = false) Double toSalary){
         return employeeService.getEmployeeByParam(name, fromSalary, toSalary);
     }
 
